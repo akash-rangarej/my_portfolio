@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import React from "react";
+import darkIcon from "../../assets/dark.png";
 import "./Navbar.css";
 
 function Navbar() {
@@ -67,11 +68,7 @@ function Navbar() {
 
       <button id="theme-toggle" onClick={handle_dark_mode}>
         {darkmode ? (
-          <img
-            src="src\assets\dark.png"
-            alt="dark icon"
-            className="dark-mode"
-          />
+          <img src={darkIcon} alt="dark icon" className="dark-mode" />
         ) : (
           <svg
             width="24"

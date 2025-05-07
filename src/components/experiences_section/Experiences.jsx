@@ -1,9 +1,12 @@
-import React from 'react'
-import './Experiences.css'
+import React from "react";
+import "./Experiences.css";
+import cause2025Cert from "../../assets/experiences/cause_2025.jpg";
+import dataQuestCert from "../../assets/experiences/data_quest_participation.jpg";
+
 function Experiences() {
   return (
-   <>
-    <section className="experiences-section">
+    <>
+      <section className="experiences-section">
         <h1>Experiences</h1>
         <div className="hackathons-section">
           <h2>Hackathons</h2>
@@ -16,15 +19,10 @@ function Experiences() {
               opportunities and enhancing digital literacy for informal workers
               such as gig workers, construction workers, and others. Our
               solution aimed to bridge the gap by offering accessible resources
-              and information tailored to their fields. With this innovative
-              approach, we were proud to reach the finalist stage in the
-              competition.
+              and information tailored to their fields.
             </p>
             <div>
-              <a
-                href="src/assets/experiences/cause_2025.jpg"
-                className="certificate-link"
-              >
+              <a href={cause2025Cert} className="certificate-link">
                 View Certificate
               </a>
             </div>
@@ -43,19 +41,15 @@ function Experiences() {
               problems.
             </p>
             <div>
-              <a
-                href="src/assets/experiences/data_quest_participation.jpg"
-                className="certificate-link"
-              >
+              <a href={dataQuestCert} className="certificate-link">
                 View Certificate
               </a>
             </div>
           </div>
         </div>
       </section>
-   
-   </>
-  )
+    </>
+  );
 }
 
-export default Experiences
+export default Experiences;

@@ -6,6 +6,7 @@ import About from "./components/About_section/About";
 import My_work from "./components/mywork_section/My_work";
 import Experiences from "./components/experiences_section/Experiences";
 import Get_in_touch from "./components/get_in_touch/Get_in_touch";
+import profilePic from "./assets/profile_pic.jpg";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ function App() {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    const imagesToLoad = ["src/assets/profile_pic.jpg"];
+    const imagesToLoad = [profilePic];
 
     let loadedImages = 0;
     imagesToLoad.forEach((src) => {
@@ -64,12 +65,12 @@ function App() {
 
   return (
     <>
-    <Navbar className="navbar" />
+      <Navbar className="navbar" />
       <div className={`loading-screen ${loading ? "" : "hidden"}`}>
         <div className="loader-container">
           <div className="profile-pic-loader">
             <img
-              src="src/assets/profile_pic.jpg"
+              src={profilePic}
               alt="Profile"
               className={`profile-pic loading ${imagesLoaded ? "loaded" : ""}`}
             />
@@ -86,15 +87,10 @@ function App() {
           transition: "opacity 0.5s ease, transform 0.5s ease",
         }}
       >
-        
         {/* <Navbar className="navbar" /> */}
         <div className="container reveal">
           <div>
-            <img
-              src="src/assets/profile_pic.jpg"
-              alt="Profile"
-              className="profile-pic"
-            />
+            <img src={profilePic} alt="Profile" className="profile-pic" />
           </div>
           <div>
             <p className="intro-text reveal delay-200">

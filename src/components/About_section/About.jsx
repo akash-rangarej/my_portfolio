@@ -1,5 +1,7 @@
 import React from "react";
 import "./About.css";
+import myResume from "../../assets/my_resume.pdf";
+
 function About() {
   return (
     <>
@@ -41,7 +43,7 @@ function About() {
           className="resume-button-container"
           style={{ textAlign: "center", marginTop: "2rem" }}
         >
-          <a href="src/assets/my_resume.pdf">View Resume</a>
+          <a href={myResume}>View Resume</a>
         </div>
       </div>
     </>
