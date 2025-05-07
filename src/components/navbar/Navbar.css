@@ -1,0 +1,146 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #e6dddd;
+  padding: 15px 30px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  color: rgb(0, 0, 0);
+  z-index: 1000;
+}
+
+.navbar-dark-mode{
+    background: #04013d;
+    color: whitesmoke;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); 
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-item {
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: #00bcd4;
+  transform: translateY(-2px);
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1); 
+}
+
+.dark-mode {
+  width: 24px; 
+  height: 24px;
+  object-fit: contain; 
+  background: #e6dddd;
+}
+
+.bright-mode{
+    color: white;
+    background: #04013d;
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-button svg {
+    width: 24px;
+    height: 24px;
+    color: inherit; /* This will inherit the color from the navbar */
+}
+
+/* Light mode */
+.navbar .mobile-menu-button svg {
+    color: #000;
+}
+
+/* Dark mode */
+.navbar-dark-mode .mobile-menu-button svg {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: inherit;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-items.open {
+        display: flex;
+    }
+
+    .navbar-item {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    #theme-toggle {
+        margin-left: auto;
+    }
+}
