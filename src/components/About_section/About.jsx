@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import myResume from "../../assets/my_resume.pdf";
+import myResume from "../../assets/Akash_R_resume.pdf";
 
 function About() {
   return (

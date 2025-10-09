@@ -2,12 +2,32 @@ import React from "react";
 import "./My_work.css";
 import intervewer from "../../assets/my_work/ai-intervewer.png";
 import employment from "../../assets/my_work/digital_employment.png";
-
+import dataanalysis from "../../assets/my_work/data_analysis.jpg";
 function My_work() {
   return (
     <section className="my-work-container">
       <h1>My Work</h1>
+      
       <div className="project-card">
+        <h2>Automotive Data Analysis Platform</h2>
+        <a href="https://github.com/akash-rangarej/automotive-data-analysis-platform">
+          <p className="git-source-code">Source Code</p>
+        </a>
+        <img src={dataanalysis} alt="automotive-data-analysis-platform" />
+        <p>
+          A full-stack web application designed to simplify data analysis for users with little or no coding experience.
+The platform automates key data science tasks using tools like Pandas, NumPy, Matplotlib, and Scikit-learn.
+When a user uploads a dataset, the system provides:
+
+Statistical insights – summary and descriptive information about the data.
+
+Data visualization – generates charts based on selected columns (downloadable as images).
+
+Preprocessed dataset – handles missing values, removes outliers, and prepares data for modeling(processed dataset downloadable as csv).
+        </p>
+      </div>
+      <div className="project-card">
+
         <h2>AI interviewer</h2>
         <a href="https://github.com/akash-rangarej/Ai-interviewer">
           <p className="git-source-code">Source Code</p>
