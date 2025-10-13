@@ -2,7 +2,7 @@ import React from "react";
 import "./My_work.css";
 import intervewer from "../../assets/my_work/ai-intervewer.png";
 import employment from "../../assets/my_work/digital_employment.png";
-import dataanalysis from "../../assets/my_work/data_analysis.jpg";
+import dataanalysis from "../../assets/my_work/data-analysis.png";
 function My_work() {
   return (
     <section className="my-work-container">
@@ -12,6 +12,9 @@ function My_work() {
         <h2>Automotive Data Analysis Platform</h2>
         <a href="https://github.com/akash-rangarej/automotive-data-analysis-platform">
           <p className="git-source-code">Source Code</p>
+        </a>
+        <a href="https://automotive-data-analysis-platform.onrender.com/">
+          <p className="git-source-code">Live</p>
         </a>
         <img src={dataanalysis} alt="automotive-data-analysis-platform" />
         <p>
