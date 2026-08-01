@@ -4,14 +4,10 @@ import darkIcon from "../../assets/dark.png";
 import "./Navbar.css";
 
 function Navbar() {
-  const [darkmode, setdarkmode] = useState(false);
+  const [darkmode, setdarkmode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const nav = useRef(null);
 
-  useEffect(() => {
-    nav.current.classList.add("navbar-dark-mode");
-    document.body.classList.add("navbar-dark-mode");
-  }, []);
 
   const handle_dark_mode = () => {
     setdarkmode(!darkmode);
@@ -63,6 +59,9 @@ function Navbar() {
           onClick={() => scrollToSection("experiences")}
         >
           Experiences
+        </div>
+        <div className="navbar-item" onClick={() => scrollToSection("get-in-touch")}>
+          Get in Touch
         </div>
       </div>
 

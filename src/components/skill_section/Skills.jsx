@@ -1,149 +1,117 @@
 import React from "react";
 import "./Skills.css";
 
-// Programming Languages
-import pythonLogo from "../../assets/technical skills/languages_logos/python.webp";
-import javaLogo from "../../assets/technical skills/languages_logos/java.png";
-import jsLogo from "../../assets/technical skills/languages_logos/js.png";
-import cppLogo from "../../assets/technical skills/languages_logos/C++.png";
+const skillCategories = [
+  {
+    title: "Programming Languages",
+    description:
+      "Languages used for software engineering, backend development, and AI.",
+    skills: [
+      { name: "Python", class: "devicon-python-plain colored" },
+      { name: "JavaScript", class: "devicon-javascript-plain colored" },
+      { name: "Go", class: "devicon-go-original-wordmark colored" },
+      { name: "Java", class: "devicon-java-plain colored" },
+      { name: "C", class: "devicon-c-plain colored" },
+    ],
+  },
 
-// Frontend
-import reactLogo from "../../assets/technical skills/frontend_logos/React.png";
-import cssLogo from "../../assets/technical skills/frontend_logos/css.png";
-import bootstrapLogo from "../../assets/technical skills/frontend_logos/bootstrap.jpeg";
+  {
+    title: "Frontend",
+    description: "Technologies used to build responsive user interfaces.",
+    skills: [
+      { name: "HTML5", class: "devicon-html5-plain colored" },
+      { name: "CSS3", class: "devicon-css3-plain colored" },
+      { name: "Bootstrap", class: "devicon-bootstrap-plain colored" },
+      { name: "React", class: "devicon-react-original colored" },
+    ],
+  },
 
-// Backend
-import djangoLogo from "../../assets/technical skills/backend_logos/django.png";
-import flaskLogo from "../../assets/technical skills/backend_logos/flask.svg";
-import mongodbLogo from "../../assets/technical skills/backend_logos/mongodb.svg";
-import mysqlLogo from "../../assets/technical skills/backend_logos/mysql.svg";
+  {
+    title: "Backend Frameworks",
+    description: "Frameworks used for scalable backend applications.",
+    skills: [
+      { name: "FastAPI", class: "devicon-fastapi-plain colored" },
+      { name: "Flask", class: "devicon-flask-original" },
+      { name: "Django", class: "devicon-django-plain colored" },
+      { name: "Node.js", class: "devicon-nodejs-plain colored" },
+      { name: "Express", class: "devicon-express-original" },
+    ],
+  },
 
-// Data Science and ML
-import pandasLogo from "../../assets/technical skills/ds_ml/pandas.png";
-import numpyLogo from "../../assets/technical skills/ds_ml/NumPy.png";
-import excelLogo from "../../assets/technical skills/ds_ml/excel.png";
-import matplotlibLogo from "../../assets/technical skills/ds_ml/matplotlib.webp";
-import sklearnLogo from "../../assets/technical skills/ds_ml/sklearn.png";
-import tensorflowLogo from "../../assets/technical skills/ds_ml/tensorflow.png";
+  {
+    title: "Databases",
+    description: "Databases and caching technologies.",
+    skills: [
+      { name: "MongoDB", class: "devicon-mongodb-plain colored" },
+      { name: "PostgreSQL", class: "devicon-postgresql-plain colored" },
+      { name: "MySQL", class: "devicon-mysql-original colored" },
+      { name: "Redis", class: "devicon-redis-plain colored" },
+    ],
+  },
 
-// Tools
-import gitLogo from "../../assets/technical skills/tools_logos/git.png";
-import vscodeLogo from "../../assets/technical skills/tools_logos/vs_code.jpeg";
-import githubLogo from "../../assets/technical skills/tools_logos/github.png";
+  {
+    title: "Data Science & Machine Learning",
+    description: "Libraries and frameworks for ML and analytics.",
+    skills: [
+      { name: "Scikit-Learn", class: "devicon-scikitlearn-plain colored" },
+      { name: "TensorFlow", class: "devicon-tensorflow-original colored" },
+      { name: "PyTorch", class: "devicon-pytorch-original colored" },
+      { name: "Streamlit", class: "devicon-streamlit-plain colored" },
+      { name: "Hadoop", class: "devicon-hadoop-plain colored" },
+      { name: "Apache Spark", class: "devicon-apachespark-original colored" },
+    ],
+  },
+
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud platforms and deployment technologies.",
+    skills: [
+      { name: "Docker", class: "devicon-docker-plain colored" },
+      { name: "Cloudinary", class: "devicon-cloudflare-plain colored" },
+      { name: "RabbitMQ", class: "devicon-rabbitmq-original colored" },
+    ],
+  },
+
+  {
+    title: "Developer Tools",
+    description: "Tools used throughout the development workflow.",
+    skills: [
+      { name: "Git", class: "devicon-git-plain colored" },
+      { name: "GitHub", class: "devicon-github-original" },
+      { name: "VS Code", class: "devicon-vscode-plain colored" },
+      { name: "Postman", class: "devicon-postman-plain colored" },
+      { name: "Playwright", class: "devicon-playwright-plain colored" },
+    ],
+  },
+];
 
 function Skills() {
   return (
-    <>
-      <div className="skills-section">
-        <h1>Skills</h1>
+    <div className="skills-section">
+      <h1>Skills</h1>
 
-        <div className="skill-category">
-          <h2>Programming Languages</h2>
-          <p>
-            My favorite languages for systems programming, software engineering,
-            and data analysis.
-          </p>
+      {skillCategories.map((category) => (
+        <div className="skill-category" key={category.title}>
+          <h2>{category.title}</h2>
+          <p>{category.description}</p>
+
           <div className="skills-grid">
-            <div className="skill-item" data-tooltip="Python">
-              <img src={pythonLogo} alt="python" />
-            </div>
-            <div className="skill-item" data-tooltip="Java">
-              <img src={javaLogo} alt="java" />
-            </div>
-            <div className="skill-item" data-tooltip="JavaScript">
-              <img src={jsLogo} alt="javascript" />
-            </div>
-            <div className="skill-item" data-tooltip="C++">
-              <img src={cppLogo} alt="C++" />
-            </div>
+            {category.skills.map((skill) => (
+              <div
+                className="skill-item"
+                key={skill.name}
+                data-tooltip={skill.name}
+              >
+                <i
+                  className={skill.class}
+                  style={{ fontSize: "55px" }}
+                ></i>
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="skill-category">
-          <h2>Front-End</h2>
-          <p>
-            My preferred technologies for front-end web development and
-            component design.
-          </p>
-          <div className="skills-grid">
-            <div className="skill-item" data-tooltip="React">
-              <img src={reactLogo} alt="react" />
-            </div>
-            <div className="skill-item" data-tooltip="CSS">
-              <img src={cssLogo} alt="css" />
-            </div>
-            <div className="skill-item" data-tooltip="Bootstrap">
-              <img src={bootstrapLogo} alt="bootstrap" />
-            </div>
-          </div>
-        </div>
-
-        <div className="skill-category">
-          <h2>Back-End</h2>
-          <p>
-            My preferred technologies for back-end web programming and database
-            architecture.
-          </p>
-          <div className="skills-grid">
-            <div className="skill-item" data-tooltip="Django">
-              <img src={djangoLogo} alt="django" />
-            </div>
-            <div className="skill-item" data-tooltip="Flask">
-              <img src={flaskLogo} alt="flask" />
-            </div>
-            <div className="skill-item" data-tooltip="MongoDB">
-              <img src={mongodbLogo} alt="mongodb" />
-            </div>
-            <div className="skill-item" data-tooltip="MySQL">
-              <img src={mysqlLogo} alt="mysql" />
-            </div>
-          </div>
-        </div>
-
-        <div className="skill-category">
-          <h2>Data Science and Machine Learning</h2>
-          <div className="skills-grid">
-            <div className="skill-item" data-tooltip="Pandas">
-              <img src={pandasLogo} alt="pandas" />
-            </div>
-            <div className="skill-item" data-tooltip="NumPy">
-              <img src={numpyLogo} alt="numpy" />
-            </div>
-            <div className="skill-item" data-tooltip="Excel">
-              <img src={excelLogo} alt="excel" />
-            </div>
-            <div className="skill-item" data-tooltip="Matplotlib">
-              <img src={matplotlibLogo} alt="matplotlib" />
-            </div>
-            <div className="skill-item" data-tooltip="Scikit-learn">
-              <img src={sklearnLogo} alt="sklearn" />
-            </div>
-            <div className="skill-item" data-tooltip="TensorFlow">
-              <img src={tensorflowLogo} alt="tensorflow" />
-            </div>
-          </div>
-        </div>
-
-        <div className="skill-category">
-          <h2>Tools</h2>
-          <p>
-            My favorite tools for version control, code editing, and container
-            orchestration.
-          </p>
-          <div className="skills-grid">
-            <div className="skill-item" data-tooltip="Git">
-              <img src={gitLogo} alt="git" />
-            </div>
-            <div className="skill-item" data-tooltip="VS Code">
-              <img src={vscodeLogo} alt="vs code" />
-            </div>
-            <div className="skill-item" data-tooltip="GitHub">
-              <img src={githubLogo} alt="github" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
 

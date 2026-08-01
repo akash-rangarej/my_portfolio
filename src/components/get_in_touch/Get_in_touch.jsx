@@ -26,14 +26,14 @@ function Get_in_touch() {
             <img src={xIcon} alt="x" />
           </a>
           <a
-            href="https://mail.google.com/mail/u/3/#inbox"
+            href="mailto:akashrangarej12@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={gmailIcon} alt="gmail" />
           </a>
           <a
-            href="https://www.linkedin.com/in/akash-rangarej-93239a295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            href="https://www.linkedin.com/in/akash-rangarej"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -117,7 +117,7 @@ function App() {
           <Experiences />
         </div>
 
-        <div className="reveal-left">
+        <div id="get-in-touch" className="reveal-left">
           <Get_in_touch />
         </div>
       </div>
